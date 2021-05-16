@@ -1,0 +1,16 @@
+title: WebDev-200_2021-Codewars-01
+description: Codewars tasks
+template:
+  repo: webdev-200_2021-codewars-01-template
+  name: webdev-200_2021-codewars-01
+before:
+  - type: createIssue
+    title: Welcome!
+    body: new-issue.md
+steps:
+  - title: First step
+    description: The first step in your course
+    event: issues.assigned
+    link: '{{ repoUrl }}'
+    actions:
+      - type: closeIssue
