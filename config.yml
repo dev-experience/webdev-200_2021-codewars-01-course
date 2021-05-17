@@ -16,14 +16,14 @@ before:
     title: Welcome
     body: 001-welcome.md
     store:
-      issue_1_url: '{{ result.data.html_url }}'
+      issue_01_url: '{{ result.data.html_url }}'
   - type: createFile
     filename: 002_01-hello-world_task.js
     new_name: 01-hello-world/task.js
 steps:
   - title: Create an empty JavaScript function
     description: Let's start from the very beginning
-    link: '{{ store.issue_1_url }}'
+    link: '{{ store.issue_01_url }}'
     event: push
     actions:
       - type: gate
@@ -32,6 +32,13 @@ steps:
         right: 01-hello-world/task.js
       - type: respond
         with: 003-nice-work.md
+  - title: Course is finished
+    description: That's it. Today you've learnt something
+    event: issues.closed
+    link: '{{ store.issue_01_url }}'
+    actions:
+    - type: respond
+      with: 999-finish.md
 
   # - title: Assign yourself
   #   description: Assign the first issue to yourself.
