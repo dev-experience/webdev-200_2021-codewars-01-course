@@ -27,8 +27,8 @@ steps:
     event: push
     actions:
       - type: gate
-        left: '%payload.commits[0]["modified"]%'
-        operator: contains
+        left: '%payload.commits[0]["modified"][0]%'
+        operator: ===
         right: '01-hello-world/task.js'
       - type: respond
         with: 003-nice-work.md
