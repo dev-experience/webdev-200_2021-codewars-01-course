@@ -28,8 +28,8 @@ steps:
     actions:
       - type: gate
         left: '%payload.commits[0]["modified"]%'
-        operator: ===
-        right: 01-hello-world/task.js
+        operator: contains
+        right: '01-hello-world/task.js'
       - type: respond
         with: 003-nice-work.md
   - title: Course is finished
