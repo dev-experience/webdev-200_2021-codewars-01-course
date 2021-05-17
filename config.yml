@@ -21,7 +21,7 @@ before:
     filename: 002_01-hello-world_task.js
     new_name: 01-hello-world/task.js
 steps:
-  - title: Write an empty JavaScript function
+  - title: Create an empty JavaScript function
     description: Let's start from the very beginning
     link: '{{ store.issue_1_url }}'
     event: push
@@ -30,6 +30,8 @@ steps:
         left: '%payload.commits[0]["modified"]%'
         operator: ===
         right: 01-hello-world/task.js
+      - type: respond
+        with: 003-nice-work.md
 
   # - title: Assign yourself
   #   description: Assign the first issue to yourself.
