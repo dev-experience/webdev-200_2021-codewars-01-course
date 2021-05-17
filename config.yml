@@ -15,16 +15,16 @@ before:
   - type: createIssue
     title: Welcome
     body: 001-welcome.md
-    # store:
-    #   issue_1_url: '{{ result.data.html_url }}'
-    #   issue_1_id:  '{{ result.data.id }}'
+    store:
+      issue_1_url: '{{ result.data.html_url }}'
   - type: createFile
     filename: 002_01-hello-world_task.js
     new_name: 01-hello-world/task.js
 steps:
   - title: Write an empty JavaScript function
     description: Let's start from the very beginning
-    event: push 
+    link: '{{ store.issue_1_url }}'
+    event: push
     actions:
       - type: gate
         left: '%payload.commits[0]["modified"]%'
