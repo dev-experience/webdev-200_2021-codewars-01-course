@@ -17,6 +17,7 @@ before:
     body: 001-welcome.md
     store:
       issue_01_url: '{{ result.data.html_url }}'
+      issue_01_id: '{{ result.data.id }}'
   - type: createFile
     filename: 002_01-hello-world_task.js
     new_name: 01-hello-world/task.js
@@ -27,6 +28,7 @@ steps:
     event: push
     actions:
       - type: respond
+        issue: '{{ store.issue_01_id }}'
         with: 000-print.md
         # data:
         #   info: '%payload%'
@@ -38,6 +40,7 @@ steps:
       #     - type: respond
       #       with: 004-try-again.md
       - type: respond
+        issue: '{{ store.issue_01_id }}'
         with: 003-nice-work.md
   - title: Course is finished
     description: That's it. Today you've learnt something
