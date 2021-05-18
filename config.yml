@@ -12,19 +12,20 @@ before:
   #   enforce_admins: true
   #   required_pull_request_reviews:
   #     include_admins: true
-  - type: createIssue
+  - type: createPullRequest
     title: Welcome
     body: 001-welcome.md
+    head: hello-world-function
     store:
-      issue_01_url: '{{ result.data.html_url }}'
-      issue_01_id: '{{ result.data.id }}'
+      pr_01_url: '{{ result.data.html_url }}'
+      # pr_01_id: '{{ result.data.id }}'
   - type: createFile
     filename: 002_01-hello-world_task.js
     new_name: 01-hello-world/task.js
 steps:
   - title: Create an empty JavaScript function
     description: Let's start from the very beginning
-    link: '{{ store.issue_01_url }}'
+    link: '{{ store.pr_01_url }}'
     event: push
     actions:
       # - type: respond
@@ -40,7 +41,6 @@ steps:
       #     - type: respond
       #       with: 004-try-again.md
       - type: respond
-        issue: '1'
         with: 003-nice-work.md
   - title: Course is finished
     description: That's it. Today you've learnt something
