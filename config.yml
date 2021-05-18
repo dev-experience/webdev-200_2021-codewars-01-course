@@ -40,7 +40,7 @@ steps:
       #     - type: respond
       #       with: 004-try-again.md
       - type: respond
-        issue: '{{ store.issue_01_id }}'
+        issue: '1'
         with: 003-nice-work.md
   - title: Course is finished
     description: That's it. Today you've learnt something
