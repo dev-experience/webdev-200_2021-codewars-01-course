@@ -27,11 +27,11 @@ steps:
     link: '{{ store.issue_01_url }}'
     event: push
     actions:
-      - type: respond
-        issue: '{{ store.issue_01_id }}'
-        with: 000-print.md
-        # data:
-        #   info: '%payload%'
+      # - type: respond
+      #   # issue: '{{ store.issue_01_id }}'
+      #   with: 000-print.md
+      #   # data:
+      #   #   info: '%payload%'
       # - type: gate
       #   left: '%payload.commits[0]["modified"][0]%'
       #   operator: ===
@@ -40,7 +40,7 @@ steps:
       #     - type: respond
       #       with: 004-try-again.md
       - type: respond
-        issue: '{{ store.issue_01_id }}'
+        # issue: '{{ store.issue_01_id }}'
         with: 003-nice-work.md
   - title: Course is finished
     description: That's it. Today you've learnt something
