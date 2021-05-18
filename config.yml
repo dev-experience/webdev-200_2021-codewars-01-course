@@ -28,8 +28,8 @@ steps:
     actions:
       - type: respond
         with: 000-print.md
-        store:
-          info: '%payload.commits[0]["modified"][0]%'
+        data:
+          info: '%payload%'
       - type: gate
         left: '%payload.commits[0]["modified"][0]%'
         operator: ===
