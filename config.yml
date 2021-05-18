@@ -28,15 +28,15 @@ steps:
     actions:
       - type: respond
         with: 000-print.md
-        data:
-          info: '%payload%'
-      - type: gate
-        left: '%payload.commits[0]["modified"][0]%'
-        operator: ===
-        right: '01-hello-world/task.js'
-        else:
-          - type: respond
-            with: 004-try-again.md
+        # data:
+        #   info: '%payload%'
+      # - type: gate
+      #   left: '%payload.commits[0]["modified"][0]%'
+      #   operator: ===
+      #   right: '01-hello-world/task.js'
+      #   else:
+      #     - type: respond
+      #       with: 004-try-again.md
       - type: respond
         with: 003-nice-work.md
   - title: Course is finished
