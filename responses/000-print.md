@@ -1,2 +1,2 @@
 {{ payload }}
-{{ store.info }}
+{{ info }}
