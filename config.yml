@@ -6,18 +6,18 @@ tags:
 template:
   repo: webdev-200_2021-codewars-01-template
   name: webdev-200_2021-codewars-01
-  description: >-
-    A GitHub Labs robot-powered training repository for
-    `WebDev-200_2021-Codewars-01` :robot:
+  description: A GitHub Labs robot-powered training repository for `WebDev-200_2021-Codewars-01` :robot:
 before:
-  - type: createPullRequest
-    title: Welcome
-    body: 001-welcome.md
-    store:
-      pr_01_url: '{{ result.data.html_url }}'
   - type: createFile
     filename: 002_01-hello-world_task.js
     new_name: 01-hello-world/task.js
+    branch: hello-world
+  - type: createPullRequest
+    title: Welcome
+    body: 001-welcome.md
+    head: hello-world
+    store:
+      pr_01_url: '{{ result.data.html_url }}'
 steps:
   - title: Create an empty JavaScript function
     description: Let's start from the very beginning
