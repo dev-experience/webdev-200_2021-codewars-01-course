@@ -16,13 +16,17 @@ before:
   - type: getTree
     store:
       initial_sha: "{{ result.sha }}"
-  - type: octokit
-    method: git.createRef
+  - type: respond
+    with: 000-payload.md
     data:
-      - owner: "{{ user.login }}"
-      - repo: "{{ repo }}"
-      - ref: hello-world
-      - sha: "{{ state.initial_sha }}"
+      info: "{{ store.initial_sha }}"
+  # - type: octokit
+  #   method: git.createRef
+  #   data:
+  #     - owner: "{{ user.login }}"
+  #     - repo: "{{ repo }}"
+  #     - ref: hello-world
+  #     - sha: "{{ state.initial_sha }}"
   - type: createFile
     filename: 002_01-hello-world_task.js
     new_name: 01-hello-world/task.js
