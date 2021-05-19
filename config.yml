@@ -38,17 +38,17 @@ before:
   #   store:
   #     pr_01_url: "{{ result.data.html_url }}"
 steps:
-  # - title: Create an empty JavaScript function
-  #   description: "Let's start from the very beginning"
-  #   link: "{{ store.pr_01_url }}"
-  #   event: push
-  #   actions:
-  #     - type: respond
-  #       with: 003-nice-work.md
-  - title: Course is finished
-    description: "That's it. Today you've learnt something"
-    event: issues.closed
-    # link: "{{ store.issue_01_url }}"
+  - title: Create an empty JavaScript function
+    description: "Let's start from the very beginning"
+    # link: "{{ store.pr_01_url }}"
+    event: push
     actions:
       - type: respond
-        with: 999-finish.md
+        with: 003-nice-work.md
+  # - title: Course is finished
+  #   description: "That's it. Today you've learnt something"
+  #   event: issues.closed
+  #   # link: "{{ store.issue_01_url }}"
+  #   actions:
+  #     - type: respond
+  #       with: 999-finish.md
