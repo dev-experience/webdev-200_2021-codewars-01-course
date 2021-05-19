@@ -16,10 +16,10 @@ before:
   # - type: getTree
     # store:
     #   initial_sha: "{{ result.sha }}"
-  - type: respond
-    with: 000-payload.md
-    # data:
-    #   info: "{{ store.initial_sha }}"
+  # - type: respond
+  #   with: 000-payload.md
+  #   # data:
+  #   #   info: "{{ store.initial_sha }}"
   # - type: octokit
   #   method: git.createRef
   #   data:
@@ -27,10 +27,10 @@ before:
   #     - repo: "{{ repo }}"
   #     - ref: hello-world
   #     - sha: "{{ state.initial_sha }}"
-  - type: createFile
-    filename: 002_01-hello-world_task.js
-    new_name: 01-hello-world/task.js
-    # branch: hello-world
+  # - type: createFile
+  #   filename: 002_01-hello-world_task.js
+  #   new_name: 01-hello-world/task.js
+  #   # branch: hello-world
   # - type: createPullRequest
   #   title: Welcome
   #   body: 001-welcome.md
@@ -38,13 +38,13 @@ before:
   #   store:
   #     pr_01_url: "{{ result.data.html_url }}"
 steps:
-  - title: Create an empty JavaScript function
-    description: "Let's start from the very beginning"
-    # link: "{{ store.pr_01_url }}"
-    event: push
-    actions:
-      - type: respond
-        with: 003-nice-work.md
+  # - title: Create an empty JavaScript function
+  #   description: "Let's start from the very beginning"
+  #   # link: "{{ store.pr_01_url }}"
+  #   event: push
+  #   actions:
+  #     - type: respond
+  #       with: 003-nice-work.md
   - title: Course is finished
     description: "That's it. Today you've learnt something"
     event: issues.closed
