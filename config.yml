@@ -8,28 +8,33 @@ template:
   name: webdev-200_2021-codewars-01
   description: "A GitHub Labs robot-powered training repository for `WebDev-200_2021-Codewars-01` :robot:"
 before:
+  - type: createIssue
+    title: Welcome
+    body: 001-welcome.md
+    store:
+      issue_01_url: "{{ result.data.html_url }}"
   - type: createFile
     filename: 002_01-hello-world_task.js
     new_name: 01-hello-world/task.js
-    branch: hello-world
-  - type: createPullRequest
-    title: Welcome
-    body: 001-welcome.md
-    head: hello-world
-    store:
-      pr_01_url: "{{ result.data.html_url }}"
+    # branch: hello-world
+  # - type: createPullRequest
+  #   title: Welcome
+  #   body: 001-welcome.md
+  #   head: hello-world
+  #   store:
+  #     pr_01_url: "{{ result.data.html_url }}"
 steps:
-  - title: Create an empty JavaScript function
-    description: "Let's start from the very beginning"
-    link: "{{ store.pr_01_url }}"
-    event: push
-    actions:
-      - type: respond
-        with: 003-nice-work.md
+  # - title: Create an empty JavaScript function
+  #   description: "Let's start from the very beginning"
+  #   link: "{{ store.pr_01_url }}"
+  #   event: push
+  #   actions:
+  #     - type: respond
+  #       with: 003-nice-work.md
   - title: Course is finished
     description: "That's it. Today you've learnt something"
     event: issues.closed
-    link: "{{ store.pr_01_url }}"
+    link: "{{ store.issue_01_url }}"
     actions:
       - type: respond
         with: 999-finish.md
