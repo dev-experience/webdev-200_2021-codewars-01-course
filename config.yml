@@ -13,7 +13,6 @@ before:
   - type: createPullRequest
     title: Welcome
     body: 001-welcome.md
-    head: main
     store:
       pr_01_url: '{{ result.data.html_url }}'
   - type: createFile
