@@ -16,7 +16,7 @@ before:
   - type: createFile
     filename: 002_01-hello-world_task.js
     new_name: 01-hello-world/task.js
-    # branch: hello-world
+    branch: hello-world
   # - type: createPullRequest
   #   title: Welcome
   #   body: 001-welcome.md
