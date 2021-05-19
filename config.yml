@@ -1,24 +1,21 @@
 title: Master a Clean JavaScript Code
 description: Learn best practices of writing a readable and maintainable code
-tags: [ "JavaScript", "Clean code" ]
+tags:
+  - JavaScript
+  - Clean code
 template:
   repo: webdev-200_2021-codewars-01-template
   name: webdev-200_2021-codewars-01
-  description: 'A GitHub Labs robot-powered training repository for `WebDev-200_2021-Codewars-01` :robot:'
-
+  description: >-
+    A GitHub Labs robot-powered training repository for
+    `WebDev-200_2021-Codewars-01` :robot:
 before:
-  # - type: updateBranchProtection
-  #   branch: main
-  #   enforce_admins: true
-  #   required_pull_request_reviews:
-  #     include_admins: true
   - type: createPullRequest
     title: Welcome
     body: 001-welcome.md
-    head: hello-world-function
+    head: master
     store:
       pr_01_url: '{{ result.data.html_url }}'
-      # pr_01_id: '{{ result.data.id }}'
   - type: createFile
     filename: 002_01-hello-world_task.js
     new_name: 01-hello-world/task.js
@@ -28,18 +25,6 @@ steps:
     link: '{{ store.pr_01_url }}'
     event: push
     actions:
-      # - type: respond
-      #   # issue: '{{ store.issue_01_id }}'
-      #   with: 000-print.md
-      #   # data:
-      #   #   info: '%payload%'
-      # - type: gate
-      #   left: '%payload.commits[0]["modified"][0]%'
-      #   operator: ===
-      #   right: '01-hello-world/task.js'
-      #   else:
-      #     - type: respond
-      #       with: 004-try-again.md
       - type: respond
         with: 003-nice-work.md
   - title: Course is finished
@@ -49,48 +34,3 @@ steps:
     actions:
       - type: respond
         with: 999-finish.md
-
-# # - type: getFileContents
-# #       filename: 'config.yml'
-# #       sha: '%payload.pull_request.head.sha%'
-# #       action_id: contents
-# #     - type: gate
-# #       left: '/(title:.+)(\n|\r)(tagline:.+)*(\n|\r)*(description:)/'
-# #       operator: test
-# #       right: '%actions.contents%'
-# #       else:
-# #         - type: respond
-# #           with: 13_check-metadata.md
-# #           data:
-# #             url: '%payload.repository.html_url%/edit/map-events/config.yml?'    
-
-
-  # - title: Assign yourself
-  #   description: Assign the first issue to yourself.
-  #   event: issues.assigned
-  #   link: '{{ store.issue_1_url }}'
-  #   actions:
-  #   - type: gate
-  #     every: true
-  #     gates:
-  #     - left: '%payload.action%'
-  #       operator: ===
-  #       right: assigned
-  #     - left: '%payload.assignee.login%'
-  #       operator: ===
-  #       right: '%user.login%'
-  #     - left: '%payload.issue.id%'
-  #       operator: ===
-  #       right: '{{ store.issue_1_id }}'
-  #     else:
-  #     - type: respond
-  #       with: 01_try-again.md
-  #   - type: respond
-  #     with: 01_nice-work.md
-
-  # - title: Create an empty function
-  #   description: Checking out the basic syntax
-  #   event: push
-  #   actions:
-  #   - type: respond
-  #     with: 02_nice-work.md
