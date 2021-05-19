@@ -14,12 +14,12 @@ before:
     store:
       issue_01_url: "{{ result.data.html_url }}"
   - type: getTree
-    store:
-      initial_sha: "{{ result.sha }}"
+    # store:
+    #   initial_sha: "{{ result.sha }}"
   - type: respond
     with: 000-payload.md
-    data:
-      info: "{{ store.initial_sha }}"
+    # data:
+    #   info: "{{ store.initial_sha }}"
   # - type: octokit
   #   method: git.createRef
   #   data:
