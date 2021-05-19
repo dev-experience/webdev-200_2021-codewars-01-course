@@ -13,7 +13,7 @@ before:
     body: 001-welcome.md
     store:
       issue_01_url: "{{ result.data.html_url }}"
-  - type: oktokit
+  - type: octokit
     method: git.createRef
     data:
       - ref: hello-world
