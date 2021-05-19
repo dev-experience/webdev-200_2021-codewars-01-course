@@ -6,7 +6,7 @@ tags:
 template:
   repo: webdev-200_2021-codewars-01-template
   name: webdev-200_2021-codewars-01
-  description: A GitHub Labs robot-powered training repository for `WebDev-200_2021-Codewars-01` :robot:
+  description: "A GitHub Labs robot-powered training repository for `WebDev-200_2021-Codewars-01` :robot:"
 before:
   - type: createFile
     filename: 002_01-hello-world_task.js
@@ -17,19 +17,19 @@ before:
     body: 001-welcome.md
     head: hello-world
     store:
-      pr_01_url: '{{ result.data.html_url }}'
+      pr_01_url: "{{ result.data.html_url }}"
 steps:
   - title: Create an empty JavaScript function
-    description: Let's start from the very beginning
-    link: '{{ store.pr_01_url }}'
+    description: "Let's start from the very beginning"
+    link: "{{ store.pr_01_url }}"
     event: push
     actions:
       - type: respond
         with: 003-nice-work.md
   - title: Course is finished
-    description: That's it. Today you've learnt something
+    description: "That's it. Today you've learnt something"
     event: issues.closed
-    link: '{{ store.pr_01_url }}'
+    link: "{{ store.pr_01_url }}"
     actions:
       - type: respond
         with: 999-finish.md
