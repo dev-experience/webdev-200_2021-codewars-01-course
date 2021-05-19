@@ -13,6 +13,10 @@ before:
     body: 001-welcome.md
     store:
       issue_01_url: "{{ result.data.html_url }}"
+  - type: oktokit
+    method: git.createRef
+    data:
+      - ref: hello-world
   - type: createFile
     filename: 002_01-hello-world_task.js
     new_name: 01-hello-world/task.js
