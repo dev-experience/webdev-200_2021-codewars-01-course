@@ -45,10 +45,10 @@ steps:
     actions:
       - type: respond
         with: 003-nice-work.md
-  # - title: Course is finished
-  #   description: "That's it. Today you've learnt something"
-  #   event: issues.closed
-  #   # link: "{{ store.issue_01_url }}"
-  #   actions:
-  #     - type: respond
-  #       with: 999-finish.md
+  - title: Course is finished
+    description: "That's it. Today you've learnt something"
+    event: issues.closed
+    # link: "{{ store.issue_01_url }}"
+    actions:
+      - type: respond
+        with: 999-finish.md
